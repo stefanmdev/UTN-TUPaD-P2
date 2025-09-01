@@ -2,8 +2,6 @@
 //nextInt() solo sirve para números enteros.
 //La solución fue reemplazarlo por scanner.nextLine(), que permite leer una línea completa de texto y guardarla en un String.
 
-package introjava;
-
 import java.util.Scanner;
 
 public class CorreccionCodigo {

@@ -1,5 +1,3 @@
-package introjava;
-
 public class VariablesDemo {
     public static void main(String[] args) {
         // Declaración e inicialización de variables
