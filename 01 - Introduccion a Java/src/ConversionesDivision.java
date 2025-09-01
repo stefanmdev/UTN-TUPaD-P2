@@ -1,5 +1,3 @@
-package introjava;
-
 import java.util.Scanner;
 
 public class ConversionesDivision {
