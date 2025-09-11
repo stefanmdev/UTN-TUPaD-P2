@@ -7,7 +7,7 @@
 
 ## ✨ Estudiante
 
-- **Nombre:** Dios Mayarín, Stefan  
+- **Nombre:** Dios Mayarin, Stefan  
 - **Comisión:** 8  
 
 ---
