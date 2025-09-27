@@ -1,0 +1,28 @@
+@startuml
+class Libro {
+  - titulo : String
+  - isbn : String
+  - autor : Autor
+  - editorial : Editorial
+}
+
+class Autor {
+  - nombre : String
+  - nacionalidad : String
+}
+
+class Editorial {
+  - nombre : String
+  - direccion : String
+}
+
+Libro --> Autor
+Libro o-- Editorial
+
+Libro "1" --> "1" Autor : autor
+Libro "1" o-- "1" Editorial : editorial
+
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+@enduml

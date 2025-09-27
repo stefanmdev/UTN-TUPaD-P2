@@ -1,0 +1,31 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Vehiculo {
+  - patente : String
+  - modelo  : String
+  --
+  - motor     : Motor
+  - conductor : Conductor
+}
+
+class Motor {
+  - tipo        : String
+  - numeroSerie : String
+}
+
+class Conductor {
+  - nombre   : String
+  - licencia : String
+  --
+  - vehiculo : Vehiculo
+}
+
+' Agregación 1:1
+Vehiculo "1" o-- "1" Motor : motor
+
+' Asociación 1:1 (bidireccional)
+Vehiculo "1" -- "1" Conductor : conductor/vehiculo
+@enduml

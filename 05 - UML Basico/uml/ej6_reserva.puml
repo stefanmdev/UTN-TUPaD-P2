@@ -1,0 +1,29 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Reserva {
+  - fecha : String
+  - hora  : String
+  --
+  - cliente : Cliente
+  - mesa    : Mesa
+}
+
+class Cliente {
+  - nombre   : String
+  - telefono : String
+}
+
+class Mesa {
+  - numero    : int
+  - capacidad : int
+}
+
+' Asociación 1:1 (unidireccional)
+Reserva "1" --> "1" Cliente : cliente
+
+' Agregación 1:1
+Reserva "1" o-- "1" Mesa : mesa
+@enduml

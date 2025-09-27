@@ -1,0 +1,25 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Reproductor {
+  + reproducir(Cancion cancion) : void
+}
+
+class Cancion {
+  - titulo : String
+  - artista : Artista
+}
+
+class Artista {
+  - nombre : String
+  - genero : String
+}
+
+' Asociación unidireccional
+Cancion "1" --> "1" Artista : artista
+
+' Dependencia de uso
+Reproductor ..> Cancion : usa
+@enduml

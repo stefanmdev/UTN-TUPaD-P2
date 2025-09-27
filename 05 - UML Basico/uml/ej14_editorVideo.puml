@@ -1,0 +1,25 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class EditorVideo {
+  + exportar(String formato, Proyecto proyecto) : void
+}
+
+class Render {
+  - formato  : String
+  - proyecto : Proyecto
+}
+
+class Proyecto {
+  - nombre      : String
+  - duracionMin : int
+}
+
+' Asociación unidireccional
+Render "1" --> "1" Proyecto : proyecto
+
+' Dependencia de creación
+EditorVideo ..> Render : crea
+@enduml

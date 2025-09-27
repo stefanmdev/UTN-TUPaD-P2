@@ -1,0 +1,25 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class GeneradorQR {
+  + generar(String valor, Usuario usuario) : void
+}
+
+class CodigoQR {
+  - valor : String
+  - usuario : Usuario
+}
+
+class Usuario {
+  - nombre : String
+  - email  : String
+}
+
+' Asociación unidireccional
+CodigoQR "1" --> "1" Usuario : usuario
+
+' Dependencia de creación
+GeneradorQR ..> CodigoQR : crea
+@enduml

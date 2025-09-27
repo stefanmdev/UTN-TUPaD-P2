@@ -1,0 +1,27 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class CitaMedica {
+  - fecha : String
+  - hora  : String
+  --
+  - paciente    : Paciente
+  - profesional : Profesional
+}
+
+class Paciente {
+  - nombre     : String
+  - obraSocial : String
+}
+
+class Profesional {
+  - nombre       : String
+  - especialidad : String
+}
+
+' Asociaciones 1:1 (unidireccionales)
+CitaMedica "1" --> "1" Paciente : paciente
+CitaMedica "1" --> "1" Profesional : profesional
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Documento {
+  - titulo    : String
+  - contenido : String
+  --
+  - firma : FirmaDigital
+}
+
+class FirmaDigital {
+  - codigoHash : String
+  - fecha      : String
+  --
+  - usuario : Usuario
+}
+
+class Usuario {
+  - nombre : String
+  - email  : String
+}
+
+' Composición 1:1 (Documento → FirmaDigital)
+Documento "1" *-- "1" FirmaDigital : firma
+
+' Agregación 1:1 (FirmaDigital → Usuario)
+FirmaDigital "1" o-- "1" Usuario : usuario
+@enduml

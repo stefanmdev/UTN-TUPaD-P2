@@ -1,0 +1,32 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Celular {
+  - imei   : String
+  - marca  : String
+  - modelo : String
+  --
+  - bateria : Bateria
+  - usuario : Usuario
+}
+
+class Bateria {
+  - modelo    : String
+  - capacidad : int
+}
+
+class Usuario {
+  - nombre : String
+  - dni    : String
+  --
+  - celular : Celular
+}
+
+' Agregación 1:1 (unidireccional)
+Celular "1" o-- "1" Bateria : agregación
+
+' Asociación 1:1 (bidireccional)
+Celular "1" -- "1" Usuario : usuario/celular
+@enduml

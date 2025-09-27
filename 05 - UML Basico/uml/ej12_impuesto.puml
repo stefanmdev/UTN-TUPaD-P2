@@ -1,0 +1,25 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Calculadora {
+  + calcular(Impuesto impuesto) : void
+}
+
+class Impuesto {
+  - monto : double
+  - contribuyente : Contribuyente
+}
+
+class Contribuyente {
+  - nombre : String
+  - cuil   : String
+}
+
+' Asociación 1:1 (unidireccional)
+Impuesto "1" --> "1" Contribuyente : contribuyente
+
+' Dependencia de uso
+Calculadora ..> Impuesto : usa
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Pasaporte {
+  - numero : String
+  - fechaEmision : LocalDate
+  --
+  - foto : Foto
+  - titular : Titular
+}
+
+class Foto {
+  - imagen  : String
+  - formato : String
+}
+
+class Titular {
+  - nombre : String
+  - dni    : String
+  --
+  - pasaporte : Pasaporte
+}
+
+' Composición 1:1 (unidireccional)
+Pasaporte "1" *-- "1" Foto : composición
+
+' Asociación 1:1 (bidireccional)
+Pasaporte "1" -- "1" Titular : titular/pasaporte
+@enduml

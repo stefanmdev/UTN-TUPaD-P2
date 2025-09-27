@@ -1,0 +1,31 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class Computadora {
+  - marca : String
+  - numeroSerie : String
+  --
+  - placaMadre : PlacaMadre
+  - propietario : Propietario
+}
+
+class PlacaMadre {
+  - modelo : String
+  - chipset : String
+}
+
+class Propietario {
+  - nombre : String
+  - dni : String
+  --
+  - computadora : Computadora
+}
+
+' Composición 1:1
+Computadora "1" *-- "1" PlacaMadre : composición
+
+' Asociación 1:1 (bidireccional)
+Computadora "1" -- "1" Propietario : propietario/computadora
+@enduml

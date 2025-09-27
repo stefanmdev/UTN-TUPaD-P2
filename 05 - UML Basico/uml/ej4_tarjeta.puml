@@ -1,0 +1,31 @@
+@startuml
+hide circle
+skinparam linetype ortho
+skinparam classAttributeIconSize 0
+
+class TarjetaDeCredito {
+  - numero : String
+  - fechaVencimiento : String
+  --
+  - cliente : Cliente
+  - banco   : Banco
+}
+
+class Cliente {
+  - nombre : String
+  - dni    : String
+  --
+  - tarjeta : TarjetaDeCredito
+}
+
+class Banco {
+  - nombre : String
+  - cuit   : String
+}
+
+' Asociación 1:1 (bidireccional)
+TarjetaDeCredito "1" -- "1" Cliente : cliente/tarjeta
+
+' Agregación 1:1 (rombo blanco en TarjetaDeCredito)
+TarjetaDeCredito "1" o-- "1" Banco : banco
+@enduml
